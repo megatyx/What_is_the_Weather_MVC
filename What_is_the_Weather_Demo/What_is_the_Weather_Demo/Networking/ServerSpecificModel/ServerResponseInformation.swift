@@ -14,13 +14,8 @@ struct ServerResponseInformation {
 }
 
 extension ServerResponseInformation: Decodable {
-    fileprivate enum CodingKeys: String, CodingKey {
-        case code = "cod"
-        case message = "message"
-    }
-
     init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
+        let container = try decoder.container(keyedBy: Constants.API.JSONPayloadKeys.ServerCodingKeys.self)
         self.message = try? container.decode(String.self, forKey: .message)
         self.code = try container.decode(Int.self, forKey: .code)
     }
