@@ -32,6 +32,7 @@
 		D028C36C223A552700805470 /* ForcastRouteHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D028C36B223A552700805470 /* ForcastRouteHandler.swift */; };
 		D028C36E223A601900805470 /* ServerResponseInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D028C36D223A601900805470 /* ServerResponseInformation.swift */; };
 		D028C373223A674700805470 /* ForecastDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = D028C372223A674700805470 /* ForecastDay.swift */; };
+		D0637FF5223BA0480034A25C /* CityObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0637FF4223BA0480034A25C /* CityObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		D028C36B223A552700805470 /* ForcastRouteHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForcastRouteHandler.swift; sourceTree = "<group>"; };
 		D028C36D223A601900805470 /* ServerResponseInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerResponseInformation.swift; sourceTree = "<group>"; };
 		D028C372223A674700805470 /* ForecastDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastDay.swift; sourceTree = "<group>"; };
+		D0637FF4223BA0480034A25C /* CityObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 		01BCD4CF223AC1B200EEE270 /* City */ = {
 			isa = PBXGroup;
 			children = (
+				D0637FF4223BA0480034A25C /* CityObject.swift */,
 			);
 			path = City;
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D028C35C223A4DE500805470 /* Constants.swift in Sources */,
+				D0637FF5223BA0480034A25C /* CityObject.swift in Sources */,
 				01BCD4BB223AB4AB00EEE270 /* WeatherInformation.swift in Sources */,
 				D028C357223A4D7400805470 /* APIHandler.swift in Sources */,
 				D028C36E223A601900805470 /* ServerResponseInformation.swift in Sources */,
