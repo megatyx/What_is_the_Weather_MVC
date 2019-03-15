@@ -13,12 +13,8 @@ struct Forecast {
 }
 
 extension Forecast: Decodable {
-    fileprivate enum CodingKeys: String, CodingKey {
-        case forecastDays = "list"
-    }
-    
     init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.forecastDays = try container.decode([ForecastDay].self, forKey: .forecastDays)
+        let container = try decoder.container(keyedBy: Constants.API.JSONPayloadKeys.ForecastCodingKeys.self)
+        self.forecastDays = try container.decode([ForecastDay].self, forKey: .forcastsContainer)
     }
 }

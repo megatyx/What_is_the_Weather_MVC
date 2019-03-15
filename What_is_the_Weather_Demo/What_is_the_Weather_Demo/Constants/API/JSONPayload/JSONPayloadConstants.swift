@@ -15,8 +15,19 @@ extension Constants.API {
             case code = "cod"
             case message = "message"
         }
+
+        enum CityCodingKeys: String, CodingKey {
+            case cityContainer = "city"
+            case cityName = "name"
+            case id = "id"
+            case coordinate = "coord"
+            case longitude = "lon"
+            case latitude = "lat"
+            case country = "country"
+        }
         
         enum ForecastCodingKeys: String, CodingKey {
+            case forcastsContainer = "list"
             case temperature = "temp"
             case day = "day"
             case min = "min"
