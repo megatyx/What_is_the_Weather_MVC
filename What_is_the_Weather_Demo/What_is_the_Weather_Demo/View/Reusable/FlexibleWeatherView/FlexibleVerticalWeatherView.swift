@@ -11,7 +11,11 @@ import UIKit
 class FlexibleVerticalWeatherView: UIView {
 
     @IBOutlet weak var degreesLabel: UILabel!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView! {
+        didSet {
+            print("tableview set")
+        }
+    }
     @IBOutlet weak var weatherIconContainerView: UIView! {
         didSet {
              self.weatherIconContainerView.layer.cornerRadius = self.weatherIconContainerView.frame.size.width/2
@@ -26,10 +30,10 @@ class FlexibleVerticalWeatherView: UIView {
 
     var weatherData: Forecast?
 
-    var shouldExpand: Bool? {
+    var isExpanded: Bool? {
         didSet {
-            guard let shouldExpand = shouldExpand else {return}
-            if shouldExpand {
+            guard let isExpanded = isExpanded else {return}
+            if isExpanded {
                 self.expandView()
             } else {
                 self.collapseView()
@@ -39,12 +43,13 @@ class FlexibleVerticalWeatherView: UIView {
 
     var shouldAnimateExpands: Bool = true
     var shouldAnimateCollapses: Bool = true
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.collapseView()
+        //self.tableView.register(UINib(nibName: "Title_DetailTableViewCell", bundle: nil), forCellReuseIdentifier: "Title_DetailTableViewCell")
+        //self.collapseView()
     }
-
+    
     private func expandView() {
         func inLineExpand() {
             self.tableView.isHidden = false

@@ -10,19 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FlexibleVerticalWeatherView" customModule="What_is_the_Weather_Demo" customModuleProvider="target">
-            <connections>
-                <outlet property="degreesLabel" destination="vYF-dF-o2X" id="j6h-uM-ni1"/>
-                <outlet property="tableView" destination="u42-2u-xQF" id="0GP-Mh-j6G"/>
-                <outlet property="weatherIconContainerView" destination="La1-N5-2dI" id="Qib-mg-9h0"/>
-                <outlet property="weatherIconContainerViewBottomConstraint" destination="ZJb-II-18h" id="W7P-Wj-kYP"/>
-                <outlet property="weatherIconContainerViewHeightConstraint" destination="qzu-5o-XKW" id="v04-Dk-F7D"/>
-                <outlet property="weatherIconImageView" destination="4mC-cT-jge" id="eBC-Jg-GjD"/>
-            </connections>
-        </placeholder>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="210" height="287"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="FlexibleVerticalWeatherView" customModule="What_is_the_Weather_Demo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="210" height="332"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20 ºC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vYF-dF-o2X">
@@ -35,7 +26,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="La1-N5-2dI">
-                    <rect key="frame" x="69" y="107" width="72" height="72"/>
+                    <rect key="frame" x="69" y="152" width="72" height="72"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sunnyWeatherIcon" translatesAutoresizingMaskIntoConstraints="NO" id="4mC-cT-jge">
                             <rect key="frame" x="8" y="8" width="56" height="56"/>
@@ -52,11 +43,11 @@
                     </constraints>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="u42-2u-xQF">
-                    <rect key="frame" x="16" y="68" width="178" height="31"/>
+                    <rect key="frame" x="16" y="68" width="178" height="76"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
-                        <outlet property="dataSource" destination="-1" id="N9A-JN-1fb"/>
-                        <outlet property="delegate" destination="-1" id="vv2-CE-HDh"/>
+                        <outlet property="dataSource" destination="iN0-l3-epB" id="lfB-4Z-vFo"/>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="sBa-Xm-ZKb"/>
                     </connections>
                 </tableView>
             </subviews>
@@ -73,10 +64,18 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="67.200000000000003" y="-17.541229385307346"/>
+            <connections>
+                <outlet property="degreesLabel" destination="vYF-dF-o2X" id="PmN-En-xdo"/>
+                <outlet property="tableView" destination="u42-2u-xQF" id="W9A-dT-oU7"/>
+                <outlet property="weatherIconContainerView" destination="La1-N5-2dI" id="TmG-w9-0l0"/>
+                <outlet property="weatherIconContainerViewBottomConstraint" destination="ZJb-II-18h" id="SN8-47-zKJ"/>
+                <outlet property="weatherIconContainerViewHeightConstraint" destination="qzu-5o-XKW" id="KRx-0h-TAy"/>
+                <outlet property="weatherIconImageView" destination="4mC-cT-jge" id="fOD-ly-Pe9"/>
+            </connections>
+            <point key="canvasLocation" x="67.200000000000003" y="-37.781109445277366"/>
         </view>
     </objects>
     <resources>
-        <image name="sunnyWeatherIcon" width="256" height="256"/>
+        <image name="sunnyWeatherIcon" width="512" height="512"/>
     </resources>
 </document>

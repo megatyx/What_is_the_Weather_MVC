@@ -52,9 +52,9 @@ extension APIHandler {
                 let decoder = JSONDecoder()
                 do {
                     let serverData = try decoder.decode(ServerResponseInformation.self, from: data)
-                    let forcast = try decoder.decode(Forecast.self, from: data)
+                    let forecast = try decoder.decode(Forecast.self, from: data)
                     let city = try decoder.decode(City.self, from: data)
-                    success(serverData, forcast, city)
+                    success(serverData, forecast, city)
                 } catch let error as APIError {
                     print(error.description)
                     failure(error)

@@ -17,6 +17,12 @@
 		01BCD4D6223ACBAC00EEE270 /* JSONPayloadConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BCD4D5223ACBAC00EEE270 /* JSONPayloadConstants.swift */; };
 		01BCD4DC223ACD2000EEE270 /* ParameterConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BCD4DB223ACD2000EEE270 /* ParameterConstants.swift */; };
 		01BCD4DE223ACE0D00EEE270 /* RouteConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BCD4DD223ACE0D00EEE270 /* RouteConstants.swift */; };
+		01F07BAF2243F3B600F4A1D5 /* Title_DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F07BAE2243F3B600F4A1D5 /* Title_DetailTableViewCell.swift */; };
+		01F07BB22243F41700F4A1D5 /* Title_DetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01F07BB12243F41700F4A1D5 /* Title_DetailTableViewCell.xib */; };
+		01F07BB52243F64900F4A1D5 /* ForcastFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01F07BB42243F64900F4A1D5 /* ForcastFlow.storyboard */; };
+		01F07BBB224409A400F4A1D5 /* ForcastCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F07BB9224409A400F4A1D5 /* ForcastCollectionViewCell.swift */; };
+		01F07BBC224409A400F4A1D5 /* ForcastCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01F07BBA224409A400F4A1D5 /* ForcastCollectionViewCell.xib */; };
+		01F07BBF22440D2600F4A1D5 /* AppLandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F07BBE22440D2600F4A1D5 /* AppLandingViewController.swift */; };
 		D028C32C223A4B0100805470 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D028C32B223A4B0100805470 /* AppDelegate.swift */; };
 		D028C331223A4B0100805470 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D028C32F223A4B0100805470 /* Main.storyboard */; };
 		D028C333223A4B0200805470 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D028C332223A4B0200805470 /* Assets.xcassets */; };
@@ -60,6 +66,12 @@
 		01BCD4D5223ACBAC00EEE270 /* JSONPayloadConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONPayloadConstants.swift; sourceTree = "<group>"; };
 		01BCD4DB223ACD2000EEE270 /* ParameterConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterConstants.swift; sourceTree = "<group>"; };
 		01BCD4DD223ACE0D00EEE270 /* RouteConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteConstants.swift; sourceTree = "<group>"; };
+		01F07BAE2243F3B600F4A1D5 /* Title_DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Title_DetailTableViewCell.swift; sourceTree = "<group>"; };
+		01F07BB12243F41700F4A1D5 /* Title_DetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Title_DetailTableViewCell.xib; sourceTree = "<group>"; };
+		01F07BB42243F64900F4A1D5 /* ForcastFlow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ForcastFlow.storyboard; sourceTree = "<group>"; };
+		01F07BB9224409A400F4A1D5 /* ForcastCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForcastCollectionViewCell.swift; sourceTree = "<group>"; };
+		01F07BBA224409A400F4A1D5 /* ForcastCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForcastCollectionViewCell.xib; sourceTree = "<group>"; };
+		01F07BBE22440D2600F4A1D5 /* AppLandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLandingViewController.swift; sourceTree = "<group>"; };
 		D028C328223A4B0100805470 /* What_is_the_Weather_Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = What_is_the_Weather_Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D028C32B223A4B0100805470 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D028C330223A4B0100805470 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -182,6 +194,48 @@
 			path = Parameters;
 			sourceTree = "<group>";
 		};
+		01F07BB02243F3C600F4A1D5 /* Title_DetailTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				01F07BAE2243F3B600F4A1D5 /* Title_DetailTableViewCell.swift */,
+				01F07BB12243F41700F4A1D5 /* Title_DetailTableViewCell.xib */,
+			);
+			path = Title_DetailTableViewCell;
+			sourceTree = "<group>";
+		};
+		01F07BB32243F5EF00F4A1D5 /* AppFlow */ = {
+			isa = PBXGroup;
+			children = (
+				D028C350223A4B7900805470 /* Storyboards */,
+			);
+			path = AppFlow;
+			sourceTree = "<group>";
+		};
+		01F07BB62243F64F00F4A1D5 /* Forcast_Flow */ = {
+			isa = PBXGroup;
+			children = (
+				01F07BB42243F64900F4A1D5 /* ForcastFlow.storyboard */,
+			);
+			path = Forcast_Flow;
+			sourceTree = "<group>";
+		};
+		01F07BB82244097A00F4A1D5 /* CollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				01F07BB9224409A400F4A1D5 /* ForcastCollectionViewCell.swift */,
+				01F07BBA224409A400F4A1D5 /* ForcastCollectionViewCell.xib */,
+			);
+			path = CollectionViewCells;
+			sourceTree = "<group>";
+		};
+		01F07BBD22440CFE00F4A1D5 /* AppLandingViewController */ = {
+			isa = PBXGroup;
+			children = (
+				01F07BBE22440D2600F4A1D5 /* AppLandingViewController.swift */,
+			);
+			path = AppLandingViewController;
+			sourceTree = "<group>";
+		};
 		D028C31F223A4B0100805470 = {
 			isa = PBXGroup;
 			children = (
@@ -203,12 +257,12 @@
 		D028C32A223A4B0100805470 /* What_is_the_Weather_Demo */ = {
 			isa = PBXGroup;
 			children = (
+				01F07BB32243F5EF00F4A1D5 /* AppFlow */,
 				D028C34B223A4B1000805470 /* Constants */,
 				D028C34F223A4B4E00805470 /* Networking */,
 				D028C34E223A4B2B00805470 /* Model */,
 				D0562F332243735B007AB0E9 /* View */,
 				D0562F3A22439EC1007AB0E9 /* ViewControllers */,
-				D028C350223A4B7900805470 /* Storyboards */,
 				D028C34D223A4B2400805470 /* Resources */,
 			);
 			path = What_is_the_Weather_Demo;
@@ -269,6 +323,7 @@
 		D028C350223A4B7900805470 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				01F07BB62243F64F00F4A1D5 /* Forcast_Flow */,
 				D028C352223A4BB200805470 /* Main_Flow */,
 				D028C351223A4B9600805470 /* LaunchScreen */,
 			);
@@ -346,6 +401,7 @@
 		D0562F332243735B007AB0E9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				01F07BB82244097A00F4A1D5 /* CollectionViewCells */,
 				D0562F36224373EC007AB0E9 /* Reusable */,
 			);
 			path = View;
@@ -354,6 +410,7 @@
 		D0562F36224373EC007AB0E9 /* Reusable */ = {
 			isa = PBXGroup;
 			children = (
+				01F07BB02243F3C600F4A1D5 /* Title_DetailTableViewCell */,
 				D0562F37224373F7007AB0E9 /* FlexibleWeatherView */,
 			);
 			path = Reusable;
@@ -371,6 +428,7 @@
 		D0562F3A22439EC1007AB0E9 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				01F07BBD22440CFE00F4A1D5 /* AppLandingViewController */,
 				D0562F3B22439ECD007AB0E9 /* WeatherForcastViewController */,
 			);
 			path = ViewControllers;
@@ -476,6 +534,9 @@
 				D0562F3922437414007AB0E9 /* FlexibleVerticalWeatherView.xib in Resources */,
 				D028C336223A4B0200805470 /* LaunchScreen.storyboard in Resources */,
 				D028C333223A4B0200805470 /* Assets.xcassets in Resources */,
+				01F07BBC224409A400F4A1D5 /* ForcastCollectionViewCell.xib in Resources */,
+				01F07BB52243F64900F4A1D5 /* ForcastFlow.storyboard in Resources */,
+				01F07BB22243F41700F4A1D5 /* Title_DetailTableViewCell.xib in Resources */,
 				D028C331223A4B0100805470 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -508,7 +569,9 @@
 				01BCD4DE223ACE0D00EEE270 /* RouteConstants.swift in Sources */,
 				D028C32C223A4B0100805470 /* AppDelegate.swift in Sources */,
 				D028C35A223A4D9900805470 /* URLFactory.swift in Sources */,
+				01F07BBF22440D2600F4A1D5 /* AppLandingViewController.swift in Sources */,
 				D028C36C223A552700805470 /* ForcastRouteHandler.swift in Sources */,
+				01F07BAF2243F3B600F4A1D5 /* Title_DetailTableViewCell.swift in Sources */,
 				01BCD4C5223ABB7300EEE270 /* WindInformation.swift in Sources */,
 				D028C355223A4D6A00805470 /* APISession.swift in Sources */,
 				01BCD4DC223ACD2000EEE270 /* ParameterConstants.swift in Sources */,
@@ -518,6 +581,7 @@
 				01BCD4D1223AC2DE00EEE270 /* TemperatureInformation.swift in Sources */,
 				D028C373223A674700805470 /* ForecastDay.swift in Sources */,
 				01BCD4C1223AB95F00EEE270 /* TemperatureAndBarometrics.swift in Sources */,
+				01F07BBB224409A400F4A1D5 /* ForcastCollectionViewCell.swift in Sources */,
 				D028C365223A516900805470 /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
