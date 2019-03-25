@@ -14,6 +14,8 @@ enum WeatherStatusEnum: String {
     case clear = "Clear"
     case rain = "Rain"
     case snow = "Snow"
+    case drizzle = "Drizzle"
+    case tStorm = "Thunderstorm"
     
     var image: UIImage? {
         switch self {
@@ -21,7 +23,7 @@ enum WeatherStatusEnum: String {
             return UIImage(named: "cloudyWeatherIcon")
         case .clear:
             return UIImage(named: "sunnyWeatherIcon")
-        case .rain:
+        case .rain, .drizzle, .tStorm:
             return UIImage(named: "rainyWeathericon")
         case .snow:
             return UIImage(named: "snowWeatherIcon")

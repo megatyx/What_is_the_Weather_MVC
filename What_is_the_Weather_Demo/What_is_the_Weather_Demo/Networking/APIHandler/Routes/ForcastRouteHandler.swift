@@ -9,7 +9,7 @@
 import CoreLocation
 import Foundation
 extension APIHandler {
-    static func get16DayForcast(cityID: String? = nil, cityName: String? = nil, zipCode: String? = nil, countryAbbr: String? = nil, coordinates: CLLocationCoordinate2D? = nil,  success: @escaping (Forecast, City) -> Void, failure: @escaping (APIError?) -> Void) {
+    static func get5DayForcast(city: City, zipCode: String? = nil, success: @escaping (ServerResponseInformation, [Forecast], City) -> Void, failure: @escaping (APIError?) -> Void) {
 
         // Build the base URL from our factory
         let urlFactory = URLFactory()
@@ -18,17 +18,17 @@ extension APIHandler {
                       value: Constants.API.Parameters.accessKey)
 
         // Add our query params prioritizing cityID first -> coordinates -> city name -> zipcode
-        if let cityID = cityID {
+        if let cityID = city.id {
             urlFactory.addQuery(key: Constants.API.Parameters.Keys.id,
-                                value: cityID)
+                                value: "\(cityID)")
 
-        } else if let coordinates = coordinates {
+        } else if let coordinates = city.coordinates {
             urlFactory.addQuery(key: Constants.API.Parameters.Keys.Coordinates.latitude,
                                 value: String(coordinates.latitude))
             urlFactory.addQuery(key: Constants.API.Parameters.Keys.Coordinates.longitude,
                                 value: String(coordinates.longitude))
-        } else if let cityName = cityName {
-            if let countryAbbr = countryAbbr {
+        } else if let cityName = city.name {
+            if let countryAbbr = city.countryName {
                 urlFactory.addStringArraySeperatedByCommas(from: [cityName, countryAbbr],
                                                            queryKey: Constants.API.Parameters.Keys.genericQuery)
             } else {
@@ -36,13 +36,16 @@ extension APIHandler {
                                     value: cityName)
             }
         } else if let zipCode = zipCode {
-            if let countryAbbr = countryAbbr {
+            if let countryAbbr = city.countryName {
                 urlFactory.addStringArraySeperatedByCommas(from: [zipCode, countryAbbr],
                                                            queryKey: Constants.API.Parameters.Keys.zipCode)
             } else {
                 urlFactory.addQuery(key: Constants.API.Parameters.Keys.zipCode,
                                     value: zipCode)
             }
+        } else {
+            failure(APIError.invalidParameters)
+            return
         }
 
         do {
@@ -50,9 +53,17 @@ extension APIHandler {
             apiSession.getData(completion: {data in
                 let decoder = JSONDecoder()
                 do {
-                    let forecast = try decoder.decode(Forecast.self, from: data)
+                    if let jsonDic = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                        if let list = jsonDic?["list"] as? Array<[String: Any]> {
+                            if let main = list[0]["main"] as? [String:Any] {
+                                print(list)
+                            }
+                        }
+                    }
+                    let serverInformation = try decoder.decode(ServerResponseInformation.self, from: data)
+                    let forecastWrapper = try decoder.decode(ForecastDecoderWrapper.self, from: data)
                     let city = try decoder.decode(City.self, from: data)
-                    success(forecast, city)
+                    success(serverInformation, forecastWrapper.forecast, city)
                 } catch let error as APIError {
                     print("\(error): \(error.description)")
                     failure(error)

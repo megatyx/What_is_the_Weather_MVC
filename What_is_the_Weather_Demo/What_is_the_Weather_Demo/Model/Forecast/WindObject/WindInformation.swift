@@ -8,20 +8,7 @@
 
 import Foundation
 
-struct WindInformation {
+struct WindInformation: Codable {
     let speed: Double
-    let degree: Double
-}
-
-extension WindInformation: Decodable {
-    fileprivate enum CodingKeys: String, CodingKey {
-        case speed
-        case degree = "deg"
-    }
-    
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.speed = try container.decode(Double.self, forKey: .speed)
-        self.degree = try container.decode(Double.self, forKey: .degree)
-    }
+    let deg: Double
 }

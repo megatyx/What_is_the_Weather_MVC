@@ -13,7 +13,7 @@
         <!--Forecast Details Table View Controller-->
         <scene sceneID="oYc-2E-iOI">
             <objects>
-                <tableViewController storyboardIdentifier="ForecastDetailsTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5co-xx-BRE" customClass="ForecastDetailsTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ForecastDetailsTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5co-xx-BRE" customClass="ForecastDetailsTableViewController" customModule="What_is_the_Weather_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="GPm-T1-rio">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

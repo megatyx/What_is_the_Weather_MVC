@@ -19,17 +19,23 @@ struct Forecast {
 
 extension Forecast: Decodable {
     init(from decoder: Decoder) throws {
-        var container = try decoder.container(keyedBy: Constants.API.JSONPayloadKeys.ForecastCodingKeys.self)
-        if let nestedContainer = try? container.nestedContainer(keyedBy: Constants.API.JSONPayloadKeys.ForecastCodingKeys.self,
-                                                                forKey: .forcastsContainer) {
-            container = nestedContainer
-        }
+        let container = try decoder.container(keyedBy: Constants.API.JSONPayloadKeys.ForecastCodingKeys.self)
 
-        self.dt = try container.decode(Double.self, forKey: .dt)
+        //Get TimeStamp
+        let dt = try container.decode(Double.self, forKey: .dt)
+        self.dt = dt
         self.time = Date(timeIntervalSince1970: dt)
-        self.temperatureDetails = try TemperatureAndBarometrics(from: decoder)
+        
+        // Check for clouds container due to inconsistant API returns
+        if let nestedContainer = try? container.nestedContainer(keyedBy: Constants.API.JSONPayloadKeys.ForecastCodingKeys.self,
+                                                                forKey: .clouds) {
+            self.clouds = try nestedContainer.decode(Int.self, forKey: .all)
+        } else {
+            self.clouds = try container.decode(Int.self, forKey: .clouds)
+        }
+        
+        self.temperatureDetails = try container.decode(TemperatureAndBarometrics.self, forKey: .mainWrapper)
         self.weather = try container.decode([WeatherInformation].self, forKey: .weather)
-        self.clouds = try container.decode(Int.self, forKey: .clouds)
-        self.wind = try WindInformation(from: decoder)
+        self.wind = try container.decode(WindInformation.self, forKey: .wind)
     }
 }

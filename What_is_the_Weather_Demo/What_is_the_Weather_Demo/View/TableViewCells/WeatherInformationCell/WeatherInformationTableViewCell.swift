@@ -11,6 +11,11 @@ import UIKit
 class WeatherInformationTableViewCell: UITableViewCell {
 
     static let reuseIdentifier = "WeatherInformationTableViewCell"
-    @IBOutlet weak var weatherInformationView: WeatherInformationView!
     
+    
+    @IBOutlet weak var currentTempLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var weatherIconContainerView: UIView!
+    @IBOutlet weak var weatherIconImageView: UIImageView!
 }

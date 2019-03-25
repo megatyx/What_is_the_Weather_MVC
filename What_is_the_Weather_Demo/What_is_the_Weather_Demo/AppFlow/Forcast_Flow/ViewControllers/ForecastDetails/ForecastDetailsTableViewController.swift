@@ -14,9 +14,10 @@ class ForecastDetailsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.register(WeatherInformationTableViewCell.self, forCellReuseIdentifier: WeatherInformationTableViewCell.reuseIdentifier)
-        self.tableView.register(Title_DetailTableViewCell.self, forCellReuseIdentifier: Title_DetailTableViewCell.reuseIdentifier)
-        self.tableView.register(CenteredLabelTableViewCell.self, forCellReuseIdentifier: CenteredLabelTableViewCell.reuseIdentifier)
+        self.tableView.allowsSelection = false
+        self.tableView.register(UINib(nibName: WeatherInformationTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: WeatherInformationTableViewCell.reuseIdentifier)
+        self.tableView.register(UINib(nibName: Title_DetailTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: Title_DetailTableViewCell.reuseIdentifier)
+        self.tableView.register(UINib(nibName: CenteredLabelTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: CenteredLabelTableViewCell.reuseIdentifier)
     }
 
     // MARK: - Table view data source
@@ -32,9 +33,9 @@ class ForecastDetailsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.row {
         case viewModel.weatherRow:
-            return 100
+            return 200
         default:
-            return 50
+            return 100
         }
     }
 
@@ -42,26 +43,32 @@ class ForecastDetailsTableViewController: UITableViewController {
         switch indexPath.row {
         case viewModel.weatherRow:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: WeatherInformationTableViewCell.reuseIdentifier, for: indexPath) as? WeatherInformationTableViewCell else {return UITableViewCell()}
-            cell.weatherInformationView.viewModel = WeatherInformationViewModel(weatherInformation: self.viewModel.data.weather[0])
+            let weatherInformation =  self.viewModel.data.weather[0]
+            cell.currentTempLabel.isHidden = true
+            cell.timeLabel.isHidden = true
+            cell.descriptionLabel.text = weatherInformation.weatherStatusDetail
+            cell.weatherIconImageView.image = weatherInformation.weatherStatus?.image
             return cell
         case viewModel.temperatureRow:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: CenteredLabelTableViewCell.reuseIdentifier, for: indexPath) as? CenteredLabelTableViewCell else {return UITableViewCell()}
-            cell.cellLabel.text = "\(self.viewModel.data.temperatureDetails.temperature)°"
+            let lows = lround(self.viewModel.data.temperatureDetails.temperature.min_Celsius)
+            let highs = lround(self.viewModel.data.temperatureDetails.temperature.max_Celsius)
+            cell.cellLabel.text = "\(lows)° - \(highs)°"
             return cell
         case viewModel.windSpeedRow:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: Title_DetailTableViewCell.reuseIdentifier, for: indexPath) as? Title_DetailTableViewCell else {return UITableViewCell()}
-            cell.titleLabel.text = "Wind Speed"
-            cell.detailLabel.text = "\(viewModel.data.wind.speed)"
+            cell.leftLabel.text = "Wind Speed"
+            cell.rightLabel.text = "\(viewModel.data.wind.speed)"
             return cell
         case viewModel.humidityRow:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: Title_DetailTableViewCell.reuseIdentifier, for: indexPath) as? Title_DetailTableViewCell else {return UITableViewCell()}
-            cell.titleLabel.text = "Humidity"
-            cell.detailLabel.text = "\(viewModel.data.temperatureDetails.barometrics.humidity)%"
+            cell.leftLabel.text = "Humidity"
+            cell.rightLabel.text = "\(viewModel.data.temperatureDetails.barometrics.humidity)%"
             return cell
         case viewModel.pressureRow:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: Title_DetailTableViewCell.reuseIdentifier, for: indexPath) as? Title_DetailTableViewCell else {return UITableViewCell()}
-            cell.titleLabel.text = "Pressure"
-            cell.detailLabel.text = "\(viewModel.data.temperatureDetails.barometrics.pressure)"
+            cell.leftLabel.text = "Pressure"
+            cell.rightLabel.text = "\(viewModel.data.temperatureDetails.barometrics.pressure)"
             return cell
         default:
             return UITableViewCell()

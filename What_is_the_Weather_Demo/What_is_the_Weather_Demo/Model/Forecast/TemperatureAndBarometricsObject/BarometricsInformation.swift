@@ -26,11 +26,7 @@ struct BarometricsInformation {
 
 extension BarometricsInformation: Decodable {
     init(from decoder: Decoder) throws {
-        var container = try decoder.container(keyedBy: Constants.API.JSONPayloadKeys.ForecastCodingKeys.self)
-        if let nestedContainer = try? container.nestedContainer(keyedBy: Constants.API.JSONPayloadKeys.ForecastCodingKeys.self,
-                                                                forKey: .temperatureContainer) {
-            container = nestedContainer
-        }
+        let container = try decoder.container(keyedBy: Constants.API.JSONPayloadKeys.ForecastCodingKeys.self)
         self.pressure = try container.decode(Double.self, forKey: .pressure)
         self.humidity = try container.decode(Int.self, forKey: .humidity)
         self.currentTemp_Kelvins = (try? container.decode(Double.self, forKey: .temperature)) ?? 0

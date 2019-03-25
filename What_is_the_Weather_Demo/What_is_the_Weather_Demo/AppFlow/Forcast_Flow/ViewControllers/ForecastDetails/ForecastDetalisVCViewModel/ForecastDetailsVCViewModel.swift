@@ -9,7 +9,7 @@
 import Foundation
 
 struct ForecastDetailsVCViewModel {
-    let data: ForecastDay
+    let data: Forecast
     var rowsToDisplay: Int
 
     let temperatureRow: Int
@@ -20,7 +20,7 @@ struct ForecastDetailsVCViewModel {
     let windDirectionRow: Int
 
     
-    init(data: ForecastDay) {
+    init(data: Forecast) {
         self.data = data
         var runningRowCount = 0
         if data.weather.count > 0 {

@@ -29,7 +29,6 @@ extension Constants.API {
         enum ForecastCodingKeys: String, CodingKey {
             case forcastsContainer = "list"
             case temperature = "temp"
-            case day = "day"
             case min = "temp_min"
             case max = "temp_max"
             case night = "night"
@@ -38,13 +37,13 @@ extension Constants.API {
             case pressure = "pressure"
             case humidity = "humidity"
             case id = "id"
-            case weatherStatus = "main"
+            case mainWrapper = "main"
             case weatherStatusDetail = "description"
             case dt = "dt"
             case weather = "weather"
             case clouds = "clouds"
             case wind = "wind"
-            case temperatureContainer = "main"
+            case all = "all"
         }
     }
 }

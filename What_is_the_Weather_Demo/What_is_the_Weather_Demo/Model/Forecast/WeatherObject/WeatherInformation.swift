@@ -19,7 +19,7 @@ extension WeatherInformation: Decodable {
         let container = try decoder.container(keyedBy: Constants.API.JSONPayloadKeys.ForecastCodingKeys.self)
         self.id = try container.decode(Int.self, forKey: .id)
         self.weatherStatusDetail = try container.decode(String.self, forKey: .weatherStatusDetail)
-        let weatherStatusString = try container.decode(String.self, forKey: .weatherStatus)
+        let weatherStatusString = try container.decode(String.self, forKey: .mainWrapper)
         self.weatherStatus = WeatherStatusEnum(rawValue: weatherStatusString)
     }
 }
