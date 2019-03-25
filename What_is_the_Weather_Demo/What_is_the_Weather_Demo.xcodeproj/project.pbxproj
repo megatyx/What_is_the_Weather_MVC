@@ -11,7 +11,6 @@
 		01BCD4BD223AB51800EEE270 /* WeatherStatusEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BCD4BC223AB51800EEE270 /* WeatherStatusEnum.swift */; };
 		01BCD4C1223AB95F00EEE270 /* TemperatureAndBarometrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BCD4C0223AB95F00EEE270 /* TemperatureAndBarometrics.swift */; };
 		01BCD4C5223ABB7300EEE270 /* WindInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BCD4C4223ABB7300EEE270 /* WindInformation.swift */; };
-		01BCD4CD223AC14E00EEE270 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BCD4CC223AC14E00EEE270 /* Forecast.swift */; };
 		01BCD4D1223AC2DE00EEE270 /* TemperatureInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BCD4D0223AC2DE00EEE270 /* TemperatureInformation.swift */; };
 		01BCD4D3223AC35700EEE270 /* BarometricsInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BCD4D2223AC35700EEE270 /* BarometricsInformation.swift */; };
 		01BCD4D6223ACBAC00EEE270 /* JSONPayloadConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BCD4D5223ACBAC00EEE270 /* JSONPayloadConstants.swift */; };
@@ -45,7 +44,7 @@
 		D028C367223A536600805470 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = D028C366223A536600805470 /* Reachability.swift */; };
 		D028C36C223A552700805470 /* ForcastRouteHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D028C36B223A552700805470 /* ForcastRouteHandler.swift */; };
 		D028C36E223A601900805470 /* ServerResponseInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D028C36D223A601900805470 /* ServerResponseInformation.swift */; };
-		D028C373223A674700805470 /* ForecastDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = D028C372223A674700805470 /* ForecastDay.swift */; };
+		D028C373223A674700805470 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = D028C372223A674700805470 /* Forecast.swift */; };
 		D0562F3D22439F0C007AB0E9 /* WeatherForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0562F3C22439F0C007AB0E9 /* WeatherForecastViewController.swift */; };
 		D0637FF5223BA0480034A25C /* CityObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0637FF4223BA0480034A25C /* CityObject.swift */; };
 		D08D6BF1223BA1B600E4982D /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08D6BF0223BA1B600E4982D /* Coordinate.swift */; };
@@ -66,7 +65,6 @@
 		01BCD4BC223AB51800EEE270 /* WeatherStatusEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherStatusEnum.swift; sourceTree = "<group>"; };
 		01BCD4C0223AB95F00EEE270 /* TemperatureAndBarometrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureAndBarometrics.swift; sourceTree = "<group>"; };
 		01BCD4C4223ABB7300EEE270 /* WindInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindInformation.swift; sourceTree = "<group>"; };
-		01BCD4CC223AC14E00EEE270 /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		01BCD4D0223AC2DE00EEE270 /* TemperatureInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureInformation.swift; sourceTree = "<group>"; };
 		01BCD4D2223AC35700EEE270 /* BarometricsInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarometricsInformation.swift; sourceTree = "<group>"; };
 		01BCD4D5223ACBAC00EEE270 /* JSONPayloadConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONPayloadConstants.swift; sourceTree = "<group>"; };
@@ -104,7 +102,7 @@
 		D028C366223A536600805470 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		D028C36B223A552700805470 /* ForcastRouteHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForcastRouteHandler.swift; sourceTree = "<group>"; };
 		D028C36D223A601900805470 /* ServerResponseInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerResponseInformation.swift; sourceTree = "<group>"; };
-		D028C372223A674700805470 /* ForecastDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastDay.swift; sourceTree = "<group>"; };
+		D028C372223A674700805470 /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		D0562F3C22439F0C007AB0E9 /* WeatherForecastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForecastViewController.swift; sourceTree = "<group>"; };
 		D0637FF4223BA0480034A25C /* CityObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityObject.swift; sourceTree = "<group>"; };
 		D08D6BF0223BA1B600E4982D /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
@@ -168,8 +166,7 @@
 				01BCD4C7223ABB8A00EEE270 /* WindObject */,
 				01BCD4BF223AB8B000EEE270 /* TemperatureAndBarometricsObject */,
 				01BCD4BE223AB82400EEE270 /* WeatherObject */,
-				D028C372223A674700805470 /* ForecastDay.swift */,
-				01BCD4CC223AC14E00EEE270 /* Forecast.swift */,
+				D028C372223A674700805470 /* Forecast.swift */,
 			);
 			path = Forecast;
 			sourceTree = "<group>";
@@ -611,7 +608,6 @@
 				01F07BD02246A91800F4A1D5 /* WeatherInformationView.swift in Sources */,
 				D028C362223A4E5300805470 /* APIConstants.swift in Sources */,
 				01BCD4D3223AC35700EEE270 /* BarometricsInformation.swift in Sources */,
-				01BCD4CD223AC14E00EEE270 /* Forecast.swift in Sources */,
 				01F07BCD2246A5E600F4A1D5 /* ForecastDetailsVCViewModel.swift in Sources */,
 				01BCD4DE223ACE0D00EEE270 /* RouteConstants.swift in Sources */,
 				D028C32C223A4B0100805470 /* AppDelegate.swift in Sources */,
@@ -628,7 +624,7 @@
 				01BCD4BD223AB51800EEE270 /* WeatherStatusEnum.swift in Sources */,
 				01BCD4D6223ACBAC00EEE270 /* JSONPayloadConstants.swift in Sources */,
 				01BCD4D1223AC2DE00EEE270 /* TemperatureInformation.swift in Sources */,
-				D028C373223A674700805470 /* ForecastDay.swift in Sources */,
+				D028C373223A674700805470 /* Forecast.swift in Sources */,
 				01BCD4C1223AB95F00EEE270 /* TemperatureAndBarometrics.swift in Sources */,
 				D028C365223A516900805470 /* APIError.swift in Sources */,
 			);

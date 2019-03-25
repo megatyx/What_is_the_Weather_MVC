@@ -30,8 +30,8 @@ extension Constants.API {
             case forcastsContainer = "list"
             case temperature = "temp"
             case day = "day"
-            case min = "min"
-            case max = "max"
+            case min = "temp_min"
+            case max = "temp_max"
             case night = "night"
             case eve = "eve"
             case morn = "morn"
@@ -44,6 +44,7 @@ extension Constants.API {
             case weather = "weather"
             case clouds = "clouds"
             case wind = "wind"
+            case temperatureContainer = "main"
         }
     }
 }
