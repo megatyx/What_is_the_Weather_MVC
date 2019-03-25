@@ -9,7 +9,7 @@
 import CoreLocation
 import Foundation
 extension APIHandler {
-    func get16DayForcast(cityID: String? = nil, cityName: String? = nil, zipCode: String? = nil, countryAbbr: String? = nil, coordinates: CLLocationCoordinate2D? = nil,  success: @escaping (ServerResponseInformation, Forecast, City) -> Void, failure: @escaping (APIError?) -> Void) {
+    static func get16DayForcast(cityID: String? = nil, cityName: String? = nil, zipCode: String? = nil, countryAbbr: String? = nil, coordinates: CLLocationCoordinate2D? = nil,  success: @escaping (Forecast, City) -> Void, failure: @escaping (APIError?) -> Void) {
 
         // Build the base URL from our factory
         let urlFactory = URLFactory()
@@ -51,15 +51,14 @@ extension APIHandler {
             apiSession.getData(completion: {data in
                 let decoder = JSONDecoder()
                 do {
-                    let serverData = try decoder.decode(ServerResponseInformation.self, from: data)
                     let forecast = try decoder.decode(Forecast.self, from: data)
                     let city = try decoder.decode(City.self, from: data)
-                    success(serverData, forecast, city)
+                    success(forecast, city)
                 } catch let error as APIError {
-                    print(error.description)
+                    print("\(error): \(error.description)")
                     failure(error)
                 } catch {
-                    print(error.localizedDescription)
+                    print("\(error): \(error.localizedDescription)")
                     failure(error as? APIError)
                 }
             }, failure: {failure($0)})

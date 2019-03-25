@@ -7,10 +7,24 @@
 //
 
 import Foundation
+import UIKit
 
 enum WeatherStatusEnum: String {
     case cloudy = "Clouds"
     case clear = "Clear"
     case rain = "Rain"
     case snow = "Snow"
+    
+    var image: UIImage? {
+        switch self {
+        case .cloudy:
+            return UIImage(named: "cloudyWeatherIcon")
+        case .clear:
+            return UIImage(named: "sunnyWeatherIcon")
+        case .rain:
+            return UIImage(named: "rainyWeathericon")
+        case .snow:
+            return UIImage(named: "snowWeatherIcon")
+        }
+    }
 }
