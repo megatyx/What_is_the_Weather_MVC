@@ -12,8 +12,8 @@ class AppLandingViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        let storyboard = UIStoryboard(name: "ForcastFlow", bundle: nil)
-        guard let controller = storyboard.instantiateViewController(withIdentifier: "WeatherForcastViewController") as? WeatherForcastViewController else {return}
+        let storyboard = UIStoryboard(name: "ForecastFlow", bundle: nil)
+        guard let controller = storyboard.instantiateViewController(withIdentifier: "WeatherForecastViewController") as? WeatherForecastViewController else {return}
         print("presentingViewController")
         self.present(controller, animated: false, completion: nil)
     }

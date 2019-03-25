@@ -93,6 +93,7 @@ class APISession {
 
             if 200 ... 299 ~= response.statusCode {
                 if let data = data {
+                    if let jsonDic = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {print(jsonDic)}
                     DispatchQueue.main.async {
                         completion(data)
                     }

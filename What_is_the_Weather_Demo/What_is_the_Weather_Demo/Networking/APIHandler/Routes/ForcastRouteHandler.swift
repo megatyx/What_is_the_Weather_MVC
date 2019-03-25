@@ -14,7 +14,6 @@ extension APIHandler {
         // Build the base URL from our factory
         let urlFactory = URLFactory()
             .addString(Constants.API.Routes.Forecast.forecast, isPiped: true)
-            .addString(Constants.API.Routes.Forecast.daily)
             .addQuery(key: Constants.API.Parameters.Keys.accessKey,
                       value: Constants.API.Parameters.accessKey)
 

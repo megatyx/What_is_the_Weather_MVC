@@ -1,5 +1,5 @@
 //
-//  DetailedForcastTableViewCell.swift
+//  WeatherInformationTableViewCell.swift
 //  What_is_the_Weather_Demo
 //
 //  Created by Tyler Wells on 3/25/19.
@@ -8,7 +8,9 @@
 
 import UIKit
 
-class DetailedForcastTableViewCell: UITableViewCell {
-    
+class WeatherInformationTableViewCell: UITableViewCell {
+
+    static let reuseIdentifier = "WeatherInformationTableViewCell"
     @IBOutlet weak var weatherInformationView: WeatherInformationView!
+    
 }

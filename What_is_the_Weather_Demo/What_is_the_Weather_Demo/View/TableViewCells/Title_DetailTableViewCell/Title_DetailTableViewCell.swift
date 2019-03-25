@@ -10,6 +10,8 @@ import UIKit
 
 class Title_DetailTableViewCell: UITableViewCell {
 
+    static let reuseIdentifier = "Title_DetailTableViewCell"
+
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var detailLabel: UILabel!
     
