@@ -12,10 +12,7 @@ import UIKit
 struct WeatherInformationViewModel {
     let weatherIcon: UIImage?
     let weatherDescription: String
-    
-    
-    init(weatherInformation: WeatherInformation) {
-        self.weatherIcon = weatherInformation.weatherStatus?.image
-        self.weatherDescription = weatherInformation.weatherStatusDetail
-    }
+    let timeString: String
+    let temperatureString: String
+    let timeDate: Date
 }
